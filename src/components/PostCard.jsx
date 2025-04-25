@@ -20,12 +20,18 @@ const PostCard = ({
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
   const [isLiked, setIsLiked] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const currentUser = localStorage.getItem("username") || "Você";
 
   const handleLike = () => {
+    setIsAnimating(true);
     setLikes((prev) => (isLiked ? prev - 1 : prev + 1));
     setIsLiked(!isLiked);
+    
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 400);
   };
 
   const handleAddComment = (e) => {
@@ -97,7 +103,13 @@ const PostCard = ({
               isLiked ? "text-red-600" : "text-gray-500"
             } hover:text-red-600 transition-colors`}
           >
-            <Heart size={14} fill={isLiked ? "#dc2626" : "none"} />
+            <Heart 
+            size={14} 
+            fill={isLiked ? "#dc2626" : "none"} 
+            className={`transition-all duration-300 ${
+              isAnimating ? "scale-150 scale-100" : ""
+            }`}
+          />
             {likes} {likes === 1 ? "Like" : "Likes"}
           </button>
 
