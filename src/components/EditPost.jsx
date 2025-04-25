@@ -10,7 +10,7 @@ const EditPost = ({ title, setTitle, content, setContent, handleSaveEdit, handle
         <div className="flex items-center justify-between p-4 border-b border-gray-100">
           <h2 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
             <div className="h-4 w-1 bg-gradient-to-b from-indigo-500 to-pink-500 rounded-full"></div>
-            Editar Post
+            Edit Post
           </h2>
           <button
             onClick={handleCancelEdit}
@@ -24,7 +24,7 @@ const EditPost = ({ title, setTitle, content, setContent, handleSaveEdit, handle
         <form onSubmit={handleSaveEdit} className="p-6">
           <div className="mb-4">
             <label htmlFor="edit-title" className="block text-sm font-medium text-gray-700 mb-1">
-              Título
+              Títle
             </label>
             <input
               type="text"
@@ -38,7 +38,7 @@ const EditPost = ({ title, setTitle, content, setContent, handleSaveEdit, handle
           
           <div className="mb-4">
             <label htmlFor="edit-content" className="block text-sm font-medium text-gray-700 mb-1">
-              Conteúdo
+              Content
             </label>
             <textarea
               id="edit-content"
@@ -55,7 +55,7 @@ const EditPost = ({ title, setTitle, content, setContent, handleSaveEdit, handle
               onClick={handleCancelEdit}
               className="px-4 py-2 text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
             >
-              Cancelar
+              Cancel
             </button>
             <button
               type="submit"
@@ -63,7 +63,7 @@ const EditPost = ({ title, setTitle, content, setContent, handleSaveEdit, handle
               className="flex items-center gap-2 px-4 py-2 text-white bg-gradient-to-r from-indigo-500 to-pink-500 rounded-md hover:from-indigo-600 hover:to-pink-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Save size={16} />
-              Salvar
+              Save
             </button>
           </div>
         </form>
